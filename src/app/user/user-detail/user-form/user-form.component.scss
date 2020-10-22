@@ -1,0 +1,22 @@
+
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 50%;
+  height: 50%;
+  border: 0.5px grey solid;
+  border-radius: 5px;
+}
+
+.row {
+  margin: auto;
+  width: 50%;
+}
+
+

@@ -1,0 +1,77 @@
+.jumbotron {
+  height: 100vh;
+  width: 100vw;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+}
+
+
+// Animations
+
+.home-primary--main {
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.home-primary--sub {
+  animation: moveInRight 1s ease-out;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(black,.2);
+}
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInLeft{
+  0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+  }
+
+  80% {
+      transform: translateX(1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+
+@keyframes moveInRight{
+  0% {
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+
+  80% {
+      transform: translateX(-1rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom{
+  0% {
+      opacity: 0;
+      transform: translateY(3rem);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
