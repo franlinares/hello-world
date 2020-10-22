@@ -1,0 +1,27 @@
+<div class="continer-fluid">
+
+  <div class="container animated fadeIn">
+  
+    <form [formGroup]="userForm" (ngSubmit)="saveForm(userForm.value)">
+      <h2 class="mb-4 mt-5 text-center">Register</h2>
+
+      <div class="row flex-column mb-5">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control " type="text" id="name" formControlName="name">
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Birthdate</label>
+          <input class="form-control " type="date" id="birthdate" name="birthdate" formControlName="birthdate">
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-1" type="submit" [disabled]="!userForm.valid">Save User</button>
+        <button class="btn btn-success" type="button" (click)="newUser()">New User</button>
+      </div>
+    </form>
+  
+  </div>
+
+</div>
+ 
