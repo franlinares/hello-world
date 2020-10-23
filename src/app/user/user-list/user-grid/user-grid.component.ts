@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../../../models/user';
 
 
@@ -10,10 +10,20 @@ import { User } from '../../../models/user';
 export class UserGridComponent implements OnInit {
 
   @Input() users: User[] = [];
+  @Output() delete = new EventEmitter<number>(false);
+  @Output() edit = new EventEmitter<number>(false);
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteClick(user: User): void {
+    this.delete.emit(user.id);
+  }
+
+  editClick(user: User): void {
+    this.edit.emit(user.id);
   }
 
 }

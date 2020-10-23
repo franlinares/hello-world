@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { UserModelService } from '../../services/user-model.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -17,8 +17,9 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private userService: UserModelService, 
-    private router: ActivatedRoute) { 
-      router.params.subscribe(resp => {
+    private route: ActivatedRoute,
+    private router: Router) { 
+      route.params.subscribe(resp => {
         this.userId = resp?.id || null;
       });
     }
@@ -32,12 +33,13 @@ export class UserDetailComponent implements OnInit {
       });
     }
   }
-
+// Method to save the created user
   save(user: User): void {
     if (user) {
       this.userService.saveUser(user).subscribe(resp => {
         if (resp) {
           this.user = resp;
+          this.router.navigate(['/user']);
         }
       });
     }
