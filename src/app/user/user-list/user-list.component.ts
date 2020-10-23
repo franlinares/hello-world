@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
-import { UserFilter } from '../../models/user-filter';
+
 
 import { UserModelService } from '../../services/user-model.service';
 
@@ -26,10 +26,8 @@ export class UserListComponent implements OnInit {
  delete(id: number): void {
   if (id) {
     this.userService.deleteUser(id).subscribe(resp => {
-      if (resp) {
-        alert('The user has been removed');
-        this.loadUsers();
-      }
+      alert('The user has been removed');
+      this.loadUsers();
     });
   }
 }
@@ -42,7 +40,7 @@ editUser(id: number): void {
 }
 
 // Method to load all users
-  loadUsers(): void {
+  private loadUsers(): void {
     this.userService.getUsers().subscribe(resp => {
       if (resp) {
         this.users = resp;
@@ -51,13 +49,12 @@ editUser(id: number): void {
   }
 
 // Method to search users
-search(params: UserFilter): void {
-  this.userService.searchUsers(params).subscribe(resp => {
-    if (resp) {
-      this.users = resp;
-      
-    }
-  });
-}
+  search(name: string): void {
+    this.users = this.users.filter(resp => {
+      resp.name.includes(name);
+    });
+    console.log(name);
+    console.log(this.users);
+  }
 
 }

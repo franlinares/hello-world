@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserFilter } from '../../../models/user-filter';
+
 
 
 @Component({
@@ -10,7 +10,7 @@ import { UserFilter } from '../../../models/user-filter';
 })
 export class UserFilterComponent implements OnInit {
 
-  @Output() searchUser = new EventEmitter<UserFilter>(false);
+  @Output() searchUser = new EventEmitter<string>(false);
 
   filterForm: FormGroup
 
@@ -25,12 +25,11 @@ export class UserFilterComponent implements OnInit {
 
   reset(): void {
     this.filterForm.reset();
-    
   }
 
-  searchClick(value: any): void {
+  searchClick(value: string): void {
     if (value) {
-      this.searchUser.emit(new UserFilter(value));
+      this.searchUser.emit(value);
     }
   }
 
