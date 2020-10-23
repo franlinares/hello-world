@@ -13,6 +13,8 @@ export class UserGridComponent implements OnInit {
   @Output() delete = new EventEmitter<number>(false);
   @Output() edit = new EventEmitter<number>(false);
 
+  filterUser = '';
+  
   constructor() { }
 
   ngOnInit(): void {

@@ -53,7 +53,6 @@ export class UserModelService {
 // Method to create a new user and update it
   saveUser(user: User): Observable<User> {
     if (user.id) {
-      console.log(user);
       return this.http.put<any>(`${this.url}`, user)
         .pipe(
           map(resp => {
