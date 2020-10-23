@@ -1,6 +1,6 @@
 
-<app-navbar></app-navbar>
 
-<app-user-grid [users]="users"></app-user-grid>
+
+<app-user-grid [users]="users" (delete)="delete($event)" (edit)="editUser($event)"></app-user-grid>
 
 

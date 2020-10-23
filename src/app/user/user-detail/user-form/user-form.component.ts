@@ -31,11 +31,12 @@ export class UserFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+// Method to restart the form
   newUser(): void {
     this.userForm.reset();
   }
 
+  // Method to save the new user and emit an event with the new user
   saveForm(value: User): void {
     if (value) {
       this.userChanged.emit(new User(value));

@@ -13,7 +13,8 @@ export class UserModelService {
   private url = 'http://hello-world.innocv.com/api/user';
 
   constructor(private http: HttpClient) { }
-
+  
+// Method to get all users
   getUsers(): Observable<User[]> {
 
     return this.http.get<User[]>(`${this.url}`)
@@ -25,7 +26,7 @@ export class UserModelService {
         })
       );
   }
-
+// Method to get a user
   getUser(id: number): Observable<User> {
     return this.http.get<any[]>(`${this.url}/${id}`)
       .pipe(
@@ -42,6 +43,18 @@ export class UserModelService {
       );
   }
 
+  // Method to delete a user
+  deleteUser(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.url}/${id}`)
+      .pipe(
+        catchError((e) => {
+          alert('Unable to delete the car list');
+          return of(false);
+        })
+      );
+  }
+
+// Method to create a new user and update it
   saveUser(user: User): Observable<User> {
     if (user.id) {
       return this.http.put<any[]>(`${this.url}/${user.id}`, user)

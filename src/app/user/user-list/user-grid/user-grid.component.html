@@ -20,11 +20,13 @@
         <td>{{user.birthdate}}</td>
         <td>
 
-          <button class="btn btn-primary mr-1">
+          <button class="btn btn-primary mr-1"
+                  (click)="editClick(user)">
             <i class="fas fa-user-edit"></i>
           </button>
 
-          <button class="btn btn-danger mr-1">
+          <button class="btn btn-danger mr-1"
+                  (click)="deleteClick(user)">
             <i class="fa fa-trash"></i>
           </button>
 

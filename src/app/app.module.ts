@@ -1,26 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-// Shared Module
-import { SharedModule } from './shared/shared.module';
 // User Module
 import { UserModule } from './user/user.module';
 // httpclient
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { AppRoutingModule } from './app-routing.module';
+
+//Components
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
     UserModule,
     HttpClientModule,
   ],
