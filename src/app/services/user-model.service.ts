@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { UserFilter } from './/../models/user-filter';
+
 
 
 @Injectable({
@@ -13,7 +15,7 @@ export class UserModelService {
   private url = 'http://hello-world.innocv.com/api/user';
 
   constructor(private http: HttpClient) { }
-  
+
 // Method to get all users
   getUsers(): Observable<User[]> {
 
@@ -21,7 +23,7 @@ export class UserModelService {
       .pipe(
         map(resp => resp.map(user => new User(user))),
         catchError((e) => {
-          alert('Unable to get the car list');
+          alert('Unable to get the user list');
           return of([]);
         })
       );
@@ -37,7 +39,7 @@ export class UserModelService {
           return null;
         }),
         catchError((e) => {
-          alert('Unable to get the car');
+          alert('Unable to get the user');
           return of(null);
         })
       );
@@ -48,7 +50,7 @@ export class UserModelService {
     return this.http.delete<boolean>(`${this.url}/${id}`)
       .pipe(
         catchError((e) => {
-          alert('Unable to delete the car list');
+          alert('Unable to delete the user list');
           return of(false);
         })
       );
@@ -66,7 +68,7 @@ export class UserModelService {
             return null;
           }),
           catchError((e) => {
-            alert('The car could not be saved');
+            alert('The user could not be saved');
             return of(null);
           })
         );
@@ -80,10 +82,22 @@ export class UserModelService {
             return null;
           }),
           catchError((e) => {
-            alert('The car could not be saved');
+            alert('The user could not be saved');
             return of(null);
           })
-        )
+        );
     }
+  }
+
+  // Method to filter users
+  searchUsers(params: UserFilter): Observable<User[]> {
+    return this.http.get<User[]>(`${this.url}/search?name=${params.name}`)
+      .pipe(
+        map(resp => resp.map(user => new User(user))),
+        catchError((e) => {
+          alert('Unable to get the user list');
+          return of([]);
+        })
+      );
   }
 }
