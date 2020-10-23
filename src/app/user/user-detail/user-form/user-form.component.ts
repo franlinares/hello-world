@@ -1,6 +1,9 @@
+import { formatDate } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../../models/user';
+
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,6 +16,7 @@ export class UserFormComponent implements OnInit {
   @Input() set user(value: User) {
     if (value) {
       this.userForm.patchValue(value);
+      this.userForm.controls.birthdate.patchValue(formatDate(this.userForm.controls.birthdate.value, 'yyyy-MM-dd', 'es'));
     }
   }
 
@@ -30,6 +34,7 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userForm.reset();
   }
 // Method to restart the form
   newUser(): void {

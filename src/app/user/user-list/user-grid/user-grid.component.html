@@ -17,7 +17,7 @@
       <tr *ngFor="let user of users; let i = index">
         <th scope="row">{{i + 1}}</th>
         <td>{{user.name}}</td>
-        <td>{{user.birthdate}}</td>
+        <td>{{user.birthdate | date:'dd/MM/y'}}</td>
         <td>
 
           <button class="btn btn-primary mr-1"

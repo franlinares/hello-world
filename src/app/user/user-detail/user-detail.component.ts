@@ -17,9 +17,9 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private userService: UserModelService, 
-    private route: ActivatedRoute,
-    private router: Router) { 
-      route.params.subscribe(resp => {
+    private router: ActivatedRoute,
+    private route: Router) { 
+      router.params.subscribe(resp => {
         this.userId = resp?.id || null;
       });
     }
@@ -37,10 +37,9 @@ export class UserDetailComponent implements OnInit {
   save(user: User): void {
     if (user) {
       this.userService.saveUser(user).subscribe(resp => {
-        if (resp) {
-          this.user = resp;
-          this.router.navigate(['/user']);
-        }
+        // this.user = resp;
+        this.route.navigate(['/user']);
+        
       });
     }
   }
