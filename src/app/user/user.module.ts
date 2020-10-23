@@ -10,6 +10,11 @@ import { UserFormComponent } from './user-detail/user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 //Reactive Form Module
 import { ReactiveFormsModule } from '@angular/forms';
+//Forms Module
+import { FormsModule  } from '@angular/forms';
+
+// Pipes
+import { FilterPipe } from '../pipes/filter.pipe';
 
 
 @NgModule({
@@ -18,11 +23,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserGridComponent, 
     UserFilterComponent, 
     UserDetailComponent, 
-    UserFormComponent],
+    UserFormComponent,
+    FilterPipe
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class UserModule { }
