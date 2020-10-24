@@ -9,12 +9,12 @@
         <div class="form-group">
           <label for="name">{{'form.name' | translate}}</label>
           <input class="form-control " type="text" id="name" formControlName="name" [class.is-invalid]="nameInvalid">
-          <small *ngIf="nameInvalid" class="text-danger">Introduce at least five letters</small>
+          <small *ngIf="nameInvalid" class="text-danger">{{'form.warning1' | translate}}</small>
         </div>
         <div class="form-group">
           <label for="birthdate">{{'form.birthdate' | translate}}</label>
           <input class="form-control " type="date" id="birthdate" name="birthdate" formControlName="birthdate" [class.is-invalid]="dateInvalid">
-          <small *ngIf="dateInvalid" class="text-danger">Introduce a date</small>
+          <small *ngIf="dateInvalid" class="text-danger">{{'form.warning2' | translate}}</small>
         </div>
       </div>
       <div class="text-center">

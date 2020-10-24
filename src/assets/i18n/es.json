@@ -19,7 +19,9 @@
   "form": {
     "title": "Registro",
     "name": "Nombre",
+    "warning1": "Introduce al menos tres letras",
     "birthdate": "Nacimiento",
+    "warning2": "Introduce una fecha",
     "btn1": "Guardar Usuario",
     "btn2": "Reiniciar"
   }

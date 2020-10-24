@@ -1,0 +1,14 @@
+// Media queries
+
+// Small devices
+@media (max-width: 576px) {
+ .btn-primary {
+   margin-bottom: 5px;
+   width: 100%;
+ }
+
+ .btn-danger{
+   width: 100%;
+ }
+
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user/models/user';
 import { UserModelService } from 'src/app/user/services/user-model.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -40,6 +41,12 @@ export class UserDetailComponent implements OnInit {
       this.userService.saveUser(user).subscribe(resp => {
         // this.user = resp;
         this.route.navigate(['/user']);
+
+        //Custom message once is created
+        Swal.fire({
+          title: 'User created!',
+          icon: 'success'
+        });
       });
     }
   }
