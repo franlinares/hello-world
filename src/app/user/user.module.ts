@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { HttpClient } from '@angular/common/http';
 import { UserRoutingModule } from './user-routing.module';
 
 import { UserGridComponent } from './user-list/user-grid/user-grid.component';
@@ -16,6 +16,9 @@ import { FormsModule  } from '@angular/forms';
 // Pipes
 import { FilterPipe } from '../pipes/filter.pipe';
 
+//Translation
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { FilterPipe } from '../pipes/filter.pipe';
     UserFilterComponent, 
     UserDetailComponent, 
     UserFormComponent,
-    FilterPipe
+    FilterPipe,
+
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
+
   ]
 })
 export class UserModule { }

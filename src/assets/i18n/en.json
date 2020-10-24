@@ -1,0 +1,27 @@
+{
+  "nav": {
+    "list": "List",
+    "edit": "Edit"
+  },
+
+  "home": {
+    "text1": "This is an app, that I developed it as a test for Innocv Solutions.",
+    "text2": "Click to find out more"
+  },
+
+  "list": {
+    "title": "List of Users",
+    "opt1": "Order",
+    "opt2": "Name",
+    "opt3": "Birthdate",
+    "opt4": "Tools"
+  },
+
+  "form": {
+    "title": "Register",
+    "name": "Name",
+    "birthdate": "Birthdate",
+    "btn1": "Save User",
+    "btn2": "Reset"
+  }
+}

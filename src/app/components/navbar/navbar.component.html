@@ -5,9 +5,25 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link active" routerLink="/user"> List </a>
-      <a class="nav-link active" routerLink="/user/user-edit">Edit</a>
-      
+      <a class="nav-link active" routerLink="/user"> {{'nav.list' | translate}} </a>
+      <a class="nav-link active" routerLink="/user/user-edit">{{'nav.edit' | translate}}</a>
+    </div>
+    <div class="ml-auto">
+      <button class=" flag-esp mr-1" 
+              type="button" 
+              *ngIf="activeLang == 'en'"
+              [ngClass]="{'active': activeLang == 'es'}"
+              (click)="changeLanguage('es')"
+              alt="esp"
+              >
+            </button>
+      <button class="flag-uk" 
+              type="button" 
+              *ngIf="activeLang == 'es'"
+              [ngClass]="{'active': activeLang == 'en'}"
+              (click)="changeLanguage('en')"
+              alt="uk">
+            </button>
     </div>
   </div>
 </nav>

@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "list": "Listado",
+    "edit": "Edición"
+  },
+  "home": {
+    "text1": "Esta es una aplicación que he desarrollado como prueba para Innocv Solutions.",
+    "text2": "Haz click para saber más"
+  },
+  "list": {
+    "title": "Lista de Usuarios",
+    "opt1": "Orden",
+    "opt2": "Nombre",
+    "opt3": "Nacimiento",
+    "opt4": "Herramientas"
+  },
+
+  "form": {
+    "title": "Registro",
+    "name": "Nombre",
+    "birthdate": "Nacimiento",
+    "btn1": "Guardar Usuario",
+    "btn2": "Reiniciar"
+  }
+}
