@@ -81,14 +81,4 @@ export class UserModelService {
     }
   }
 
-  // Method to filter users
-  // searchUsers(params: UserFilter): Observable<User[]> {
-  //   return this.http.get<User[]>(`${this.url}/search?name=${params.name}`)
-  //     .pipe(
-  //       map(resp => resp.map(user => new User(user))),
-  //       catchError((e) => {
-  //         return of([]);
-  //       })
-  //     );
-  // }
 }

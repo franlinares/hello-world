@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from '../../../models/user';
+import { User } from 'src/app/user/models/user';
 
 import { Location } from '@angular/common';
 
@@ -28,7 +28,7 @@ export class UserFormComponent implements OnInit {
 
     this.userForm = fb.group({
       id: [''],
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(5)]],
       birthdate: ['', Validators.required]
     });
   }
@@ -48,4 +48,12 @@ export class UserFormComponent implements OnInit {
     }
   }
 
+  // getters to validate form
+  get nameInvalid() {
+    return this.userForm.get('name').invalid && this.userForm.get('name').touched
+  }
+
+  get dateInvalid() {
+    return this.userForm.get('birthdate').invalid && this.userForm.get('birthdate').touched
+  }
 }

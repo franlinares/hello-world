@@ -4,7 +4,8 @@
 
   <div>
     <div>
-      <input type="text" [(ngModel)]="filterUser" placeholder="Search..." class="search" />
+      <label for="search" class="mr-1 font-weight-light"> {{'list.search' | translate}} </label>
+      <input type="text" [(ngModel)]="filterUser" class="form-control w-25 mb-3" />
     </div>
   </div>
   

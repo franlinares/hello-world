@@ -8,7 +8,8 @@
     "text2": "Haz click para saber más"
   },
   "list": {
-    "title": "Lista de Usuarios",
+    "title": "Listado de Usuarios",
+    "search": "Buscar por nombre",
     "opt1": "Orden",
     "opt2": "Nombre",
     "opt3": "Nacimiento",

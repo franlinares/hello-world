@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { User } from '../../../models/user';
+import { User } from 'src/app/user/models/user';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class UserGridComponent implements OnInit {
   @Output() edit = new EventEmitter<number>(false);
 
   filterUser = '';
-  
+
   constructor() { }
 
   ngOnInit(): void {
