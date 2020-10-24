@@ -1,20 +1,20 @@
 <div class="container-fluid table-responsive table-wrapper-scroll-y my-custom-scrollbar mt-5">
 
-  <h2 class="animated fadeIn mb-4">{{'list.title' | translate}}</h2>
+  <h1 class="animated fadeIn mb-5">{{'list.title' | translate}}</h1>
 
-  <div>
-    <div>
+  
+    <div class="animated fadeIn">
       <label for="search" class="mr-1 font-weight-light"> {{'list.search' | translate}} </label>
-      <input type="text" [(ngModel)]="filterUser" class="form-control w-25 mb-3" />
+      <input type="text" [(ngModel)]="filterUser" class="form-control  w-25 mb-4" />
     </div>
-  </div>
+  
   
 
   <table class="table animated fadeIn">
 
     <thead class="thead-light">
       <tr>
-        <th scope="col">{{'list.opt1' | translate}}</th>
+        <th class="d-none d-sm-block" scope="col">{{'list.opt1' | translate}}</th>
         <th scope="col">{{'list.opt2' | translate}}</th>
         <th scope="col">{{'list.opt3' | translate}}</th>
         <th scope="col">{{'list.opt4' | translate}}</th>
@@ -22,7 +22,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users | filter:filterUser; let i = index">
-        <th scope="row">{{i + 1}}</th>
+        <th class="d-none d-sm-block" scope="row">{{i + 1}}</th>
         <td>{{user.name}}</td>
         <td>{{user.birthdate | date:'dd/MM/y'}}</td>
         <td>
@@ -43,6 +43,5 @@
     </tbody>
 
   </table>
- 
 </div>
 

@@ -21,7 +21,9 @@
   "form": {
     "title": "Register",
     "name": "Name",
+    "warning1": "Introduce at least three letters",
     "birthdate": "Birthdate",
+    "warning2": "Introduce a date",
     "btn1": "Save User",
     "btn2": "Reset"
   }

@@ -4,6 +4,7 @@ import { User } from 'src/app/user/models/user';
 
 
 import { UserModelService } from 'src/app/user/services/user-model.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -25,11 +26,20 @@ export class UserListComponent implements OnInit {
 
  // Method to delete user
  delete(id: number): void {
-  if (id) {
+  if (id) { 
     this.userService.deleteUser(id).subscribe(resp => {
-      alert('The user has been removed');
+
       this.loadUsers();
+
+    // Custom message once user is deleted
+      Swal.fire({
+        title: 'User deleted!',
+        icon: 'success'
+      });
+      // Swal.showLoading();
+      // Swal.close();
     });
+    
   }
 }
 
