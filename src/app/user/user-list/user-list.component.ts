@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user';
+import { User } from 'src/app/user/models/user';
 
 
-import { UserModelService } from '../../services/user-model.service';
+import { UserModelService } from 'src/app/user/services/user-model.service';
 
 
 
@@ -15,6 +15,7 @@ import { UserModelService } from '../../services/user-model.service';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  searching = false;
 
   constructor(private userService: UserModelService, private route: Router) { }
 
@@ -41,10 +42,12 @@ editUser(id: number): void {
 
 // Method to load all users
   private loadUsers(): void {
+    this.searching = true;
     this.userService.getUsers().subscribe(resp => {
       if (resp) {
         this.users = resp;
       }
+      this.searching = false;
     });
   }
 

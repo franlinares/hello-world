@@ -11,6 +11,7 @@
 
   "list": {
     "title": "List of Users",
+    "search": "Search by name",
     "opt1": "Order",
     "opt2": "Name",
     "opt3": "Birthdate",

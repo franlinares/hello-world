@@ -8,11 +8,13 @@
       <div class="row flex-column mb-5">
         <div class="form-group">
           <label for="name">{{'form.name' | translate}}</label>
-          <input class="form-control " type="text" id="name" formControlName="name">
+          <input class="form-control " type="text" id="name" formControlName="name" [class.is-invalid]="nameInvalid">
+          <small *ngIf="nameInvalid" class="text-danger">Introduce at least five letters</small>
         </div>
         <div class="form-group">
           <label for="birthdate">{{'form.birthdate' | translate}}</label>
-          <input class="form-control " type="date" id="birthdate" name="birthdate" formControlName="birthdate">
+          <input class="form-control " type="date" id="birthdate" name="birthdate" formControlName="birthdate" [class.is-invalid]="dateInvalid">
+          <small *ngIf="dateInvalid" class="text-danger">Introduce a date</small>
         </div>
       </div>
       <div class="text-center">

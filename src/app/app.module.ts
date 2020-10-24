@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppComponent } from './app.component';
 
+
 //LOCALE ID
 import { LOCALE_ID } from '@angular/core';
 import localeEs from '@angular/common/locales/es';
@@ -24,11 +25,13 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
+    
     
   ],
   imports: [

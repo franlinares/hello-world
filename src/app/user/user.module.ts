@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { UserRoutingModule } from './user-routing.module';
 
 import { UserGridComponent } from './user-list/user-grid/user-grid.component';
@@ -8,6 +7,10 @@ import { UserFilterComponent } from './user-list/user-filter/user-filter.compone
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserFormComponent } from './user-detail/user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { LoadingComponent } from 'src/app/components/loading/loading.component';
+
+
+
 //Reactive Form Module
 import { ReactiveFormsModule } from '@angular/forms';
 //Forms Module
@@ -28,7 +31,7 @@ import { TranslateModule } from '@ngx-translate/core';
     UserDetailComponent, 
     UserFormComponent,
     FilterPipe,
-
+    LoadingComponent
   ],
   imports: [
     CommonModule,
