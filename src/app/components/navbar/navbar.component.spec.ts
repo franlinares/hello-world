@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('LoadingComponent', () => {
+describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
 
