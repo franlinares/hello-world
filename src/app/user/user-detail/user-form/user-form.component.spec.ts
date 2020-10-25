@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 import { UserFormComponent } from './user-form.component';
 
@@ -8,6 +11,10 @@ describe('UserFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()],
+      providers: [FormBuilder,
+        
+      ],
       declarations: [ UserFormComponent ]
     })
     .compileComponents();

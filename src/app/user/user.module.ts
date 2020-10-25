@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 
 import { UserGridComponent } from './user-list/user-grid/user-grid.component';
-import { UserFilterComponent } from './user-list/user-filter/user-filter.component';
+
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserFormComponent } from './user-detail/user-form/user-form.component';
 import { UserListComponent } from './user-list/user-list.component';
@@ -27,7 +27,6 @@ import { TranslateModule } from '@ngx-translate/core';
   declarations: [
     UserListComponent, 
     UserGridComponent, 
-    UserFilterComponent, 
     UserDetailComponent, 
     UserFormComponent,
     FilterPipe,
