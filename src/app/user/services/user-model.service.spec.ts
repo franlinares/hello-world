@@ -68,7 +68,7 @@ describe('UserModelService', () => {
   it('should update an user and return added user', () => {
     const updateUser: User = { id: 24, name: 'Helen', birthdate: new Date() };
 
-    service.saveUser(updateUser).subscribe((resp) => {
+    service.updateUser(updateUser).subscribe((resp) => {
       expect(resp).toEqual(new User(updateUser));
     });
 

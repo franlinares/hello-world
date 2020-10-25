@@ -1,6 +1,6 @@
 # HelloWorld 
 
-This project that I developed it as a test for Innocv Solutions.
+This is a project that I developed it as a test for Innocv Solutions.
 
 ## Development server
 

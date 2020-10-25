@@ -39,7 +39,6 @@ export class UserModelService {
       );
   }
 
-
   deleteUser(id: number): Observable<void> {
     return this.http.delete<boolean>(`${this.url}/${id}`)
       .pipe(
@@ -48,10 +47,9 @@ export class UserModelService {
         })
       );
   }
-
+  
   saveUser(user: User): Observable<User> {
-    if (user.id) {
-      return this.http.put<any>(`${this.url}`, user)
+      return this.http.post<any>(`${this.url}`, user)
         .pipe(
           map(resp => {
             if (resp) {
@@ -63,8 +61,11 @@ export class UserModelService {
             return of(null);
           })
         );
-    } else {
-      return this.http.post<any>(`${this.url}`, user)
+    }
+
+  updateUser(user: User): Observable<User> {
+    if (user.id) {
+      return this.http.put<any>(`${this.url}`, user)
         .pipe(
           map(resp => {
             if (resp) {
@@ -79,4 +80,35 @@ export class UserModelService {
     }
   }
 
+    // saveUser(user: User): Observable<User> {
+  //   if (user.id) {
+  //     return this.http.put<any>(`${this.url}`, user)
+  //       .pipe(
+  //         map(resp => {
+  //           if (resp) {
+  //             return new User(resp);
+  //           }
+  //           return null;
+  //         }),
+  //         catchError((e) => {
+  //           return of(null);
+  //         })
+  //       );
+  //   } else {
+  //     return this.http.post<any>(`${this.url}`, user)
+  //       .pipe(
+  //         map(resp => {
+  //           if (resp) {
+  //             return new User(resp);
+  //           }
+  //           return null;
+  //         }),
+  //         catchError((e) => {
+  //           return of(null);
+  //         })
+  //       );
+  //   }
+  // }
 }
+
+
