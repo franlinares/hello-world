@@ -14,7 +14,6 @@ export class UserModelService {
 
   constructor(private http: HttpClient) { }
 
-// Method to get all users
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.url}`)
       .pipe(
@@ -24,7 +23,7 @@ export class UserModelService {
         })
       );
   }
-// Method to get a user
+
   getUser(id: number): Observable<User> {
     return this.http.get<any>(`${this.url}/${id}`)
       .pipe(
@@ -40,7 +39,7 @@ export class UserModelService {
       );
   }
 
-  // Method to delete a user
+
   deleteUser(id: number): Observable<void> {
     return this.http.delete<boolean>(`${this.url}/${id}`)
       .pipe(
@@ -50,7 +49,6 @@ export class UserModelService {
       );
   }
 
-// Method to create a new user and update it
   saveUser(user: User): Observable<User> {
     if (user.id) {
       return this.http.put<any>(`${this.url}`, user)

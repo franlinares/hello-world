@@ -24,7 +24,7 @@ export class UserListComponent implements OnInit {
     this.loadUsers();
   }
 
- // Method to delete user
+
  delete(id: number): void {
   if (id) { 
     this.userService.deleteUser(id).subscribe(resp => {
@@ -43,14 +43,12 @@ export class UserListComponent implements OnInit {
   }
 }
 
-// Method to edit a user 
 editUser(id: number): void {
   if (id) {
     this.route.navigate(['/user/user-edit', id]);
   }
 }
 
-// Method to load all users
   private loadUsers(): void {
     this.searching = true;
     this.userService.getUsers().subscribe(resp => {
@@ -61,7 +59,6 @@ editUser(id: number): void {
     });
   }
 
-// Method to search users
   search(name: string): void {
     this.users = this.users.filter(resp => {
       resp.name.includes(name);

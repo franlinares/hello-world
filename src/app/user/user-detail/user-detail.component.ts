@@ -35,14 +35,13 @@ export class UserDetailComponent implements OnInit {
       });
     }
   }
-// Method to save the created user
+
   save(user: User): void {
     if (user) {
       this.userService.saveUser(user).subscribe(resp => {
         // this.user = resp;
         this.route.navigate(['/user']);
-
-        //Custom message once is created
+        
         Swal.fire({
           title: 'User created!',
           icon: 'success'
