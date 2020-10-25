@@ -10,7 +10,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class UserModelService {
 
-  private url = 'http://hello-world.innocv.com/api/user';
+  public url = 'http://hello-world.innocv.com/api/user';
 
   constructor(private http: HttpClient) { }
 
