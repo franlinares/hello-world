@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/user/models/user';
-
-
 import { UserModelService } from 'src/app/user/services/user-model.service';
 import Swal from 'sweetalert2';
-
 
 
 @Component({
@@ -57,14 +54,6 @@ editUser(id: number): void {
       }
       this.searching = false;
     });
-  }
-
-  search(name: string): void {
-    this.users = this.users.filter(resp => {
-      resp.name.includes(name);
-    });
-    console.log(name);
-    console.log(this.users);
   }
 
 }
